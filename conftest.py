@@ -3,6 +3,7 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from pages.login_page import Loginpage
+from pages.inventory_page import Inventorypage
 
 
 @pytest.fixture
@@ -16,3 +17,7 @@ def browser(scope="session"):
 @pytest.fixture
 def login_page(browser):
     return Loginpage(browser)
+
+@pytest.fixture
+def inventory_page(browser):
+    return Inventorypage(browser)

@@ -54,8 +54,6 @@ def test_locked_out_user(login_page):
     assert error.is_displayed()
     assert "locked out" in error.text
 
-@pytest.mark.smoke
-def test_inventory_title_loaded(login_page): #NO APLICA ESTE TEST. TEST DEBIL
-    login_page.navigate_login()
-    assert login_page.title_validate().is_displayed()
+
+
    

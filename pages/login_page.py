@@ -8,7 +8,6 @@ class Loginpage(BasePage):
     USERNAME_INPUT = (By.ID, "user-name")
     PASSWORD_INPUT = (By.ID, "password")
     GETERROR = (By.XPATH, "//h3[@data-test='error']")
-    TITLE = (By.XPATH, "//div[contains(text(), 'Swag Labs')]") #BORRAR ESTE LOCATOR TEST DEBIL
 
     def navigate_login(self): #METHODS-----------------------------
         self.navigate_to("https://www.saucedemo.com/")
@@ -27,6 +26,3 @@ class Loginpage(BasePage):
 
     def error_message(self):
         return self.wait_for_element(self.GETERROR)
-    
-    def title_validate(self): # NO APLICA ESTE METODO TEST DEBIL
-        return self.wait_for_element(self.TITLE)
