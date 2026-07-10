@@ -14,6 +14,11 @@ class BasePage:
             EC.visibility_of_element_located(locator)
         )
     
+    def wait_until_disappears(self, locator, timeout=10):
+        return WebDriverWait(self.driver, timeout).until(
+            EC.invisibility_of_element_located(locator)
+        )
+    
     def click(self, locator):
         element = self.wait_for_element(locator)
         element.click()
