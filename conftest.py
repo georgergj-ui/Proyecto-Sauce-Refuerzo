@@ -4,7 +4,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from pages.login_page import Loginpage
 from pages.inventory_page import Inventorypage
-
+from pages.cart_page import Cartpage
 
 @pytest.fixture
 def browser(scope="session"):
@@ -21,3 +21,7 @@ def login_page(browser):
 @pytest.fixture
 def inventory_page(browser):
     return Inventorypage(browser)
+
+@pytest.fixture
+def cart_page(browser):
+    return Cartpage(browser)
