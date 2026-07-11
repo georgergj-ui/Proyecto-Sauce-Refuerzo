@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.service import Service
 from pages.login_page import Loginpage
 from pages.inventory_page import Inventorypage
 from pages.cart_page import Cartpage
+from pages.checkout_page import Checkoutpage
 
 @pytest.fixture
 def browser(scope="session"):
@@ -25,3 +26,7 @@ def inventory_page(browser):
 @pytest.fixture
 def cart_page(browser):
     return Cartpage(browser)
+
+@pytest.fixture
+def checkout_page(browser):
+    return Checkoutpage(browser)
