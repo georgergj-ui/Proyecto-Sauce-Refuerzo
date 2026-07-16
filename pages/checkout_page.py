@@ -8,8 +8,11 @@ class Checkoutpage(BasePage):
     FIRSTN_INPUT = (By.ID, "first-name")
     LASTN_INPUT = (By.ID, "last-name")
     ZIP_INPUT = (By.ID, "postal-code")
-    CONTINUE = (By.CSS_SELECTOR, ".submit-button.btn.btn_primary.cart_button.btn_action")
+    CONTINUE = (By.XPATH, "//input[@data-test='continue']")
     GETERROR = (By.XPATH, "//h3[@data-test='error']")
+    FINISH = (By.CSS_SELECTOR, ".btn.btn_action.btn_medium.cart_button")
+    PDF =(By.ID, "generate-pdf-order")
+    BACK =(By.ID, "back-to-products")
 
     def firstname_input(self):
         return self.wait_for_element(self.FIRSTN_INPUT)
@@ -29,6 +32,12 @@ class Checkoutpage(BasePage):
 
     def error_message(self):
         return self.wait_for_element(self.GETERROR)
-
+    
+    def finish_button(self):
+        return self.wait_for_element(self.FINISH)
+    def pdf(self):
+        return self.wait_for_element(self.PDF)
+    def back(self):
+        return self.wait_for_element(self.BACK)
     
     
